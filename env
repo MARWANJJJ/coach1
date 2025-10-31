@@ -1,0 +1,5 @@
+ADMIN_USER=مروان
+ADMIN_PASS=panda9994440
+JWT_SECRET=supersecret_test_jwt
+PORT=3000
+ADMIN_EMAIL=aya83493@gmail.com

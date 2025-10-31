@@ -1,0 +1,1581 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كوتش الجيم أونلاين - حقق حلمك</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #070707;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                radial-gradient(circle at 10% 30%, rgba(255,140,0,0.08), transparent 20%),
+                radial-gradient(circle at 85% 70%, rgba(255,107,0,0.06), transparent 25%),
+                repeating-linear-gradient(120deg, rgba(255,140,0,0.035) 0 6px, transparent 6px 22px);
+            background-blend-mode: screen;
+            z-index: -1;
+            pointer-events: none;
+            animation: gradientShift 18s ease-in-out infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        header {
+            background: linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.4));
+            padding: 12px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(6px);
+            border-bottom: 3px solid rgba(255, 140, 0, 0.9);
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .lang-btn {
+            background: linear-gradient(90deg, rgba(255,140,0,0.14), rgba(255,107,0,0.12));
+            border: 2px solid rgba(255,140,0,0.35);
+            padding: 6px 12px;
+            border-radius: 20px;
+            color: #fff;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            font-size: 13px;
+        }
+        
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        #openAuthBtn {
+            background: linear-gradient(90deg, #ff8c00, #ff6b00);
+            border: 0;
+            padding: 6px 12px;
+            border-radius: 18px;
+            color: #fff;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(255,107,0,0.2);
+            transition: transform 0.18s ease;
+            font-size: 13px;
+        }
+
+        #openAuthBtn:hover { 
+            transform: translateY(-2px);
+        }
+
+        .brand-text {
+            font-size: 18px;
+            font-weight: 900;
+            color: #ffdca6;
+            letter-spacing: 1px;
+        }
+
+        .logo .tagline { 
+            font-size: 10px; 
+            color: rgba(255,255,255,0.7); 
+            display: block; 
+        }
+        
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #ff6b00, #ffa500, #ff6b00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 900;
+    animation: titleAnimation 3s ease-in-out infinite;
+    display: inline-block;
+}
+
+@keyframes titleAnimation {
+    0%, 100% {
+        transform: scale(1) translateY(0);
+        filter: brightness(1);
+    }
+    25% {
+        transform: scale(1.05) translateY(-5px);
+        filter: brightness(1.2);
+    }
+    50% {
+        transform: scale(1.1) translateY(-8px);
+        filter: brightness(1.3);
+    }
+    75% {
+        transform: scale(1.05) translateY(-5px);
+        filter: brightness(1.2);
+    }
+}
+
+.hero h1 span {
+    display: inline-block;
+    animation: wordAnimation 2s ease-in-out infinite;
+}
+
+@keyframes wordAnimation {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            color: #ccc;
+        }
+        
+        .motivation {
+            background: linear-gradient(135deg, #ff6b00 0%, #ff8c00 100%);
+            padding: 40px 20px;
+            margin: 30px 0;
+            box-shadow: 0 8px 30px rgba(255, 107, 0, 0.3);
+        }
+        
+        .motivation-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .motivation h2 {
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
+        
+        .motivation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .motivation-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+            padding: 25px;
+            border-radius: 15px;
+            transition: all 0.4s ease;
+            border: 2px solid rgba(255, 140, 0, 0.3);
+        }
+        
+        .motivation-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            border-color: rgba(255, 140, 0, 0.6);
+        }
+        
+        .motivation-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .motivation-card p {
+            font-size: 14px;
+        }
+        
+        .packages {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        
+        .packages h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #ff6b00;
+        }
+        
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+        
+        .package-card {
+            background: linear-gradient(135deg, rgba(45, 45, 45, 0.9) 0%, rgba(61, 61, 61, 0.9) 100%);
+            padding: 30px;
+            border-radius: 20px;
+            border: 3px solid transparent;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+        }
+        
+        .package-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 20px;
+            padding: 3px;
+            background: linear-gradient(135deg, #ff6b00, #ff8c00, #ff6b00);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            z-index: -1;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(255, 107, 0, 0.5);
+        }
+        
+        .package-card.popular {
+            background: linear-gradient(135deg, #ff6b00 0%, #ff8c00 50%, #ffaa00 100%);
+            transform: scale(1.05);
+            box-shadow: 0 15px 50px rgba(255, 107, 0, 0.6);
+        }
+        
+        .package-card.popular::before {
+            display: none;
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #ffd700;
+            color: #000;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 11px;
+        }
+        
+        .package-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .price {
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+            margin: 15px 0;
+            color: #ffa500;
+        }
+        
+        .package-card.popular .price {
+            color: #fff;
+        }
+        
+        .features {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .features li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+        }
+        
+        .features li:before {
+            content: "✓ ";
+            color: #ff6b00;
+            font-weight: bold;
+            margin-left: 8px;
+        }
+        
+        .package-card.popular .features li:before {
+            color: #ffd700;
+        }
+
+        /* ✨ تنسيق خانة اختيار المدة */
+        .duration-selector {
+            margin: 15px 0;
+            padding: 15px;
+            background: linear-gradient(135deg, rgba(255,140,0,0.2), rgba(255,107,0,0.15));
+            border-radius: 12px;
+            border: 2px solid rgba(255,140,0,0.4);
+            box-shadow: 0 4px 15px rgba(255,140,0,0.25);
+        }
+
+        .package-card.popular .duration-selector {
+            background: linear-gradient(135deg, rgba(255,215,0,0.25), rgba(255,193,7,0.2));
+            border: 2px solid rgba(255,215,0,0.5);
+            box-shadow: 0 4px 15px rgba(255,215,0,0.3);
+        }
+
+        .duration-selector label {
+            display: block;
+            margin-bottom: 10px;
+            color: #ffa500;
+            font-weight: bold;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .package-card.popular .duration-selector label {
+            color: #ffd700;
+        }
+
+        .duration-selector select {
+            width: 100%;
+            padding: 12px 10px;
+            border-radius: 10px;
+            background: #1a1a1a;
+            color: #fff;
+            border: 2px solid #ff8c00;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+            transition: all 0.3s ease;
+        }
+
+        .package-card.popular .duration-selector select {
+            border: 2px solid #ffd700;
+        }
+
+        .duration-selector select:hover {
+            border-color: #ffa500;
+            box-shadow: 0 5px 15px rgba(255,140,0,0.4);
+            background: #222;
+        }
+
+        .package-card.popular .duration-selector select:hover {
+            border-color: #ffed4e;
+            box-shadow: 0 5px 15px rgba(255,215,0,0.4);
+        }
+
+        .duration-selector select:focus {
+            outline: none;
+            border-color: #ffaa00;
+            box-shadow: 0 0 0 4px rgba(255,140,0,0.25);
+            background: #222;
+        }
+
+        .package-card.popular .duration-selector select:focus {
+            border-color: #ffed4e;
+            box-shadow: 0 0 0 4px rgba(255,215,0,0.3);
+        }
+
+        /* تنسيق خيارات الـ select */
+        .duration-selector select option {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 10px;
+            border: none;
+        }
+
+        .duration-selector select option:checked {
+            background: linear-gradient(135deg, #ff6b00, #ff8c00);
+            color: #fff;
+        }
+
+        .package-card.popular .duration-selector select option:checked {
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            color: #000;
+        }
+        
+        .subscribe-btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #ff6b00, #ff8c00);
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+        
+        .subscribe-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 107, 0, 0.4);
+        }
+        
+        .package-card.popular .subscribe-btn {
+            background: #fff;
+            color: #ff6b00;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 20px 10px;
+        }
+        
+        .modal-content {
+            background: linear-gradient(135deg, #2d2d2d 0%, #3d3d3d 100%);
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 30px 20px;
+            border-radius: 20px;
+            position: relative;
+            border: 2px solid #ff6b00;
+            width: calc(100% - 20px);
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            font-size: 28px;
+            cursor: pointer;
+            color: #ff6b00;
+            transition: transform 0.3s ease;
+        }
+        
+        .close-btn:hover {
+            transform: rotate(90deg);
+        }
+        
+        .modal h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #ff6b00;
+            font-size: 24px;
+            padding-right: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 18px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            color: #ffa500;
+            font-size: 14px;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ff6b00;
+            border-radius: 8px;
+            background: #1a1a1a;
+            color: #fff;
+            font-size: 15px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #ffa500;
+        }
+        
+        .payment-method {
+            background: linear-gradient(135deg, #ff6b00, #ff8c00);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .payment-method h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .payment-method p {
+            font-size: 16px;
+            margin: 8px 0;
+        }
+
+        .whatsapp-btn {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #ff8c00, #ff6b00);
+            color: #fff;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(255, 140, 0, 0.4);
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(255, 140, 0, 0.6);
+            background: linear-gradient(135deg, #ffa500, #ff7b00);
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #ff6b00, #ff8c00);
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 107, 0, 0.4);
+        }
+        
+        footer {
+            background: #1a1a1a;
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: 50px;
+            border-top: 2px solid #ff6b00;
+        }
+
+        footer p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .footer-btn {
+            display: inline-block;
+            margin-top: 20px;
+            background: linear-gradient(135deg, #ff8c00, #ff5e00);
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(255, 140, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .footer-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 140, 0, 0.6);
+        }
+        
+        .success-message {
+            background: linear-gradient(135deg, #00ff00, #00cc00);
+            color: #000;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 15px;
+            font-weight: bold;
+            display: none;
+            font-size: 14px;
+        }
+
+        #profileWidget {
+            position: fixed;
+            top: 14px;
+            left: 14px;
+            z-index: 1500;
+            background: rgba(10,10,10,0.85);
+            color: #fff;
+            padding: 12px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,140,0,0.1);
+            display: none;
+            font-size: 13px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .packages h2 {
+                font-size: 26px;
+            }
+            
+            .package-card.popular {
+                transform: scale(1);
+            }
+            
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                padding: 25px 15px;
+            }
+
+            .modal h2 {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 40px 15px;
+            }
+
+            .hero h1 {
+                font-size: 24px;
+            }
+
+            .packages {
+                padding: 0 15px;
+            }
+
+            .packages h2 {
+                font-size: 22px;
+            }
+
+            .package-card {
+                padding: 25px 20px;
+            }
+
+            .brand-text {
+                font-size: 14px;
+            }
+
+            #profileWidget {
+                position: static;
+                margin: 10px;
+                width: calc(100% - 20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <div>
+                    <span class="brand-text">كوتش مصطفى</span>
+                    <span class="tagline">كوتش أونلاين</span>
+                </div>
+            </div>
+            <button class="lang-btn" onclick="toggleLanguage()">
+                <span id="langText">English</span>
+            </button>
+            <button id="openAuthBtn" onclick="openAuthModal()">تسجيل / دخول</button>
+        </nav>
+    </header>
+
+    <div id="profileWidget">
+        <div id="profileName">الزائر</div>
+        <div id="profileEmail">--</div>
+    </div>
+
+    <div class="hero">
+        <h1>حول جسمك.. غير حياتك</h1>
+        <p>رحلتك للجسم المثالي تبدأ من هنا 🔥</p>
+    </div>
+
+    <div class="motivation">
+        <div class="motivation-content">
+            <h2>ليه تختارنا؟</h2>
+            <p style="font-size: 18px; margin-bottom: 15px;">إحنا شريكك في النجاح!</p>
+            
+            <div class="motivation-grid">
+                <div class="motivation-card">
+                    <h3>🎯 خطة شخصية</h3>
+                    <p>برنامج مخصص ليك بناء على أهدافك</p>
+                </div>
+                
+                <div class="motivation-card">
+                    <h3>📊 نتائج مضمونة</h3>
+                    <p>نظام علمي مع آلاف العملاء الراضين</p>
+                </div>
+                
+                <div class="motivation-card">
+                    <h3>💬 متابعة يومية</h3>
+                    <p>معاك 24/7 حتى تحقق هدفك</p>
+                </div>
+                
+                <div class="motivation-card">
+                    <h3>🍎 نظام غذائي</h3>
+                    <p>أكلات لذيذة مناسبة لحياتك</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="packages">
+        <h2>اختار الباقة المناسبة 🎁</h2>
+        
+        <div class="packages-grid">
+            <div class="package-card">
+                <h3>الباقة الأساسية</h3>
+                <div class="price" id="price-basic">299 جنيه</div>
+                
+                <div class="duration-selector">
+                    <label>⏱️ اختر المدة المناسبة</label>
+                    <select id="duration-basic" onchange="updatePrice('basic')">
+                        <option value="1-299">شهر واحد - 299 جنيه</option>
+                        <option value="2-549">شهرين - 549 جنيه</option>
+                        <option value="3-799">3 شهور - 799 جنيه</option>
+                        <option value="6-1499">6 شهور - 1499 جنيه</option>
+                        <option value="12-2699">سنة كاملة - 2699 جنيه</option>
+                    </select>
+                </div>
+                
+                <ul class="features">
+                    <li>برنامج تدريبي مخصص</li>
+                    <li>نظام غذائي أساسي</li>
+                    <li>متابعة أسبوعية</li>
+                    <li>مجموعة واتساب</li>
+                </ul>
+                <button class="subscribe-btn" onclick="openModalWithDuration('basic', 'الباقة الأساسية', 'Basic Package')">اشترك الآن</button>
+            </div>
+
+            <div class="package-card">
+                <h3>باقة المحترف</h3>
+                <div class="price" id="price-pro">799 جنيه</div>
+                
+                <div class="duration-selector">
+                    <label>⏱️ اختر المدة المناسبة</label>
+                    <select id="duration-pro" onchange="updatePrice('pro')">
+                        <option value="1-349">شهر واحد - 349 جنيه</option>
+                        <option value="2-649">شهرين - 649 جنيه</option>
+                        <option value="3-799" selected>3 شهور - 799 جنيه</option>
+                        <option value="6-1599">6 شهور - 1599 جنيه</option>
+                        <option value="12-2999">سنة كاملة - 2999 جنيه</option>
+                    </select>
+                </div>
+                
+                <ul class="features">
+                    <li>برنامج متقدم</li>
+                    <li>نظام غذائي تفصيلي</li>
+                    <li>متابعة كل 3 أيام</li>
+                    <li>فيديوهات توضيحية</li>
+                </ul>
+                <button class="subscribe-btn" onclick="openModalWithDuration('pro', 'باقة المحترف', 'Professional Package')">اشترك الآن</button>
+            </div>
+
+            <div class="package-card popular">
+                <span class="popular-badge">الأكثر مبيعاً</span>
+                <h3>الباقة الذهبية</h3>
+                <div class="price" id="price-gold">1299 جنيه</div>
+                
+                <div class="duration-selector">
+                    <label>⏱️ اختر المدة المناسبة</label>
+                    <select id="duration-gold" onchange="updatePrice('gold')">
+                        <option value="1-449">شهر واحد - 449 جنيه</option>
+                        <option value="2-799">شهرين - 799 جنيه</option>
+                        <option value="3-999">3 شهور - 999 جنيه</option>
+                        <option value="6-1299" selected>6 شهور - 1299 جنيه</option>
+                        <option value="12-3499">سنة كاملة - 3499 جنيه</option>
+                    </select>
+                </div>
+                
+                <ul class="features">
+                    <li>برنامج VIP شامل</li>
+                    <li>نظام متكامل + بدائل</li>
+                    <li>متابعة يومية</li>
+                    <li>مكالمات فيديو أسبوعية</li>
+                    <li>قياسات دورية</li>
+                </ul>
+                <button class="subscribe-btn" onclick="openModalWithDuration('gold', 'الباقة الذهبية', 'Gold Package')">اشترك الآن</button>
+            </div>
+
+            <div class="package-card">
+                <h3>التحول الكامل</h3>
+                <div class="price" id="price-complete">1999 جنيه</div>
+                
+                <div class="duration-selector">
+                    <label>⏱️ اختر المدة المناسبة</label>
+                    <select id="duration-complete" onchange="updatePrice('complete')">
+                        <option value="1-549">شهر واحد - 549 جنيه</option>
+                        <option value="2-999">شهرين - 999 جنيه</option>
+                        <option value="3-1299">3 شهور - 1299 جنيه</option>
+                        <option value="6-1799">6 شهور - 1799 جنيه</option>
+                        <option value="12-1999" selected>سنة كاملة - 1999 جنيه</option>
+                    </select>
+                </div>
+                
+                <ul class="features">
+                    <li>برنامج سنوي متجدد</li>
+                    <li>نظام فصلي</li>
+                    <li>متابعة مكثفة</li>
+                    <li>استشارات شهرية</li>
+                </ul>
+                <button class="subscribe-btn" onclick="openModalWithDuration('complete', 'التحول الكامل', 'Complete Transformation')">اشترك الآن</button>
+            </div>
+
+            <div class="package-card">
+                <h3>باقة التجربة</h3>
+                <div class="price" id="price-trial">99 جنيه</div>
+                
+                <div class="duration-selector">
+                    <label>⏱️ اختر المدة المناسبة</label>
+                    <select id="duration-trial" onchange="updatePrice('trial')">
+                        <option value="1-99" selected>شهر واحد - 99 جنيه</option>
+                        <option value="2-179">شهرين - 179 جنيه</option>
+                        <option value="3-249">3 شهور - 249 جنيه</option>
+                        <option value="6-449">6 شهور - 449 جنيه</option>
+                        <option value="12-799">سنة كاملة - 799 جنيه</option>
+                    </select>
+                </div>
+                
+                <ul class="features">
+                    <li>برنامج تجريبي</li>
+                    <li>نصائح غذائية عامة</li>
+                    <li>متابعة أولية</li>
+                    <li>تقييم مجاني</li>
+                </ul>
+                <button class="subscribe-btn" onclick="openModalWithDuration('trial', 'باقة التجربة', 'Trial Package')">اشترك الآن</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="subscriptionModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>إتمام الاشتراك</h2>
+            
+            <div style="text-align: center; margin-bottom: 25px; padding: 18px; background: rgba(255,107,0,0.2); border-radius: 10px;">
+                <h3 id="selectedPackage" style="color: #ff6b00; font-size: 20px;"></h3>
+                <p id="selectedDuration" style="font-size: 16px; color: #ffa500; margin: 8px 0;"></p>
+                <p id="selectedPrice" style="font-size: 28px; color: #ffa500; font-weight: bold;"></p>
+            </div>
+            
+            <form id="subscriptionForm">
+                <div class="form-group">
+                    <label>الاسم الكامل</label>
+                    <input type="text" id="fullName" required placeholder="أدخل اسمك الكامل">
+                </div>
+                
+                <div class="form-group">
+                    <label>رقم الموبايل</label>
+                    <input type="tel" id="phone" required placeholder="01xxxxxxxxx">
+                </div>
+                
+                <div class="form-group">
+                    <label>البريد الإلكتروني</label>
+                    <input type="email" id="email" required placeholder="example@email.com">
+                </div>
+                
+                <div class="payment-method">
+                    <h3>طريقة الدفع</h3>
+                    <p style="font-size: 16px; margin: 8px 0;">💳 فودافون كاش</p>
+                    <p style="font-size: 22px; font-weight: bold; margin: 12px 0;">01270247394</p>
+                    <p style="font-size: 13px;">احفظ الرقم ده وحول المبلغ وابعت سكرين علي واتساب</p>
+                    <a href="https://wa.me/201270247394" target="_blank" class="whatsapp-btn">💬 تواصل معانا على واتساب</a>
+                </div>
+                
+                <div class="form-group">
+                    <label>رقم عملية التحويل</label>
+                    <input type="text" id="transactionId" required placeholder="أدخل رقم عملية التحويل">
+                </div>
+
+                <div class="form-group">
+                    <label>📸 رفع صورتك (اختياري)</label>
+                    <input type="file" id="userPhoto" accept="image/*" placeholder="اختر صورة">
+                    <small style="color: #aaa; font-size: 12px; margin-top: 6px; display: block;">الصور المقبولة: JPG, PNG, GIF (الحد الأقصى 5MB)</small>
+                </div>
+                
+                <button type="submit" class="submit-btn">تأكيد الاشتراك 🚀</button>
+                
+                <div id="successMessage" class="success-message">
+                    ✅ تم إرسال طلبك بنجاح! هنتواصل معاك خلال 24 ساعة
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeAuthModal()">&times;</span>
+            <h2 style="font-size: 20px; padding-right: 0;">تسجيل الدخول / الإنشاء</h2>
+            
+            <div style="display:flex; gap:8px; justify-content:center; margin-bottom:15px;">
+                <button id="authTabLogin" onclick="showAuthTab('login')" style="padding:8px 14px; border-radius:8px; background:#222; color:#ffb366; border:1px solid rgba(255,140,0,0.12); cursor:pointer; font-size:13px;">دخول</button>
+                <button id="authTabRegister" onclick="showAuthTab('register')" style="padding:8px 14px; border-radius:8px; background:#222; color:#ffdca6; border:1px solid rgba(255,140,0,0.08); cursor:pointer; font-size:13px;">إنشاء</button>
+            </div>
+
+            <div id="authLogin">
+                <h3 style="margin-bottom:12px; font-size:18px;">تسجيل دخول</h3>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label>البريد الإلكتروني</label>
+                        <input type="email" id="loginEmail" required placeholder="example@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label>كلمة المرور</label>
+                        <input type="password" id="loginPassword" required placeholder="••••••">
+                    </div>
+                    <button type="submit" style="padding:12px; border-radius:10px; background:linear-gradient(135deg,#ff6b00,#ff8c00); border:none; color:#fff; cursor:pointer; font-size:14px; width:100%; font-weight:bold;">دخول</button>
+                    <div id="loginError" style="color:#ff9090; margin-top:10px; display:none; font-size:12px;"></div>
+                </form>
+            </div>
+
+            <div id="authRegister" style="display:none;">
+                <h3 style="margin-bottom:12px; font-size:18px;">إنشاء حساب</h3>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label>الاسم الكامل</label>
+                        <input type="text" id="regName" required placeholder="أدخل اسمك الكامل">
+                    </div>
+                    <div class="form-group">
+                        <label>البريد الإلكتروني</label>
+                        <input type="email" id="regEmail" required placeholder="example@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label>كلمة المرور</label>
+                        <input type="password" id="regPassword" required placeholder="••••••">
+                    </div>
+                    <button type="submit" style="padding:12px; border-radius:10px; background:linear-gradient(135deg,#1a8cff,#4ec3ff); border:none; color:#fff; cursor:pointer; font-size:14px; width:100%; font-weight:bold;">إنشاء</button>
+                    <div id="regError" style="color:#ff9090; margin-top:10px; display:none; font-size:12px;"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="adminModal" class="modal" style="display: none;">
+        <div class="modal-content" style="max-width: 900px; max-height: 90vh; overflow-y: auto;">
+            <span class="close-btn" onclick="closeAdminPanel()">&times;</span>
+            <button onclick="logoutUser()" style="position: absolute; top: 14px; left: 60px; padding: 8px 14px; border-radius: 8px; background: #c00; color: #fff; border: none; cursor: pointer; font-size: 12px; font-weight: bold;">تسجيل الخروج 🚪</button>
+            
+            <h2 style="font-size: 22px; margin-bottom: 15px;">📊 لوحة إدارة الاشتراكات</h2>
+            <p style="text-align: center; color: #ddd; margin-bottom: 15px; font-size: 13px;">عرض جميع طلبات الاشتراك الواردة</p>
+
+            <div id="adminList" style="background: #111; padding: 15px; border-radius: 10px; max-height: 500px; overflow-y: auto;">
+                <p style="text-align: center; color: #ccc;">جاري تحميل البيانات...</p>
+            </div>
+        </div>
+    </div>
+        
+        </a>
+        
+    </footer>
+
+    <script>
+        let selectedPackageName = '';
+        let selectedPackagePrice = 0;
+        let selectedDurationText = '';
+        let currentLang = 'ar';
+
+        function updatePrice(packageType) {
+            const select = document.getElementById('duration-' + packageType);
+            const priceEl = document.getElementById('price-' + packageType);
+            const value = select.value;
+            const price = value.split('-')[1];
+            priceEl.innerHTML = price + ' جنيه';
+        }
+        
+        function openModalWithDuration(packageType, packageNameAr, packageNameEn) {
+            const select = document.getElementById('duration-' + packageType);
+            if (!select) return;
+            
+            const value = select.value;
+            const [months, price] = value.split('-');
+            
+            selectedPackageName = packageNameAr;
+            selectedPackagePrice = parseInt(price);
+            
+            const durationTexts = {
+                '1': 'شهر واحد',
+                '2': 'شهرين',
+                '3': '3 شهور',
+                '6': '6 شهور',
+                '12': 'سنة كاملة'
+            };
+            
+            selectedDurationText = durationTexts[months] || months + ' شهور';
+            
+            document.getElementById('selectedPackage').textContent = selectedPackageName;
+            document.getElementById('selectedDuration').textContent = selectedDurationText;
+            document.getElementById('selectedPrice').textContent = selectedPackagePrice + ' جنيه';
+            
+            document.getElementById('subscriptionModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            const html = document.documentElement;
+            
+            if (currentLang === 'en') {
+                html.setAttribute('lang', 'en');
+                html.setAttribute('dir', 'ltr');
+                document.getElementById('langText').textContent = 'العربية';
+                
+                // ترجمة المحتوى للإنجليزية
+                document.querySelector('.hero h1').textContent = 'Transform Your Body.. Change Your Life';
+                document.querySelector('.hero p').textContent = 'Your journey to the perfect body starts here 🔥';
+                
+                document.querySelector('.motivation h2').textContent = 'Why Choose Us?';
+                document.querySelector('.motivation-content > p').textContent = "We're not just a coach, we're your partner in success!";
+                
+                const motivationCards = document.querySelectorAll('.motivation-card');
+                motivationCards[0].querySelector('h3').textContent = '🎯 Personal Plan';
+                motivationCards[0].querySelector('p').textContent = 'A personalized training program designed just for you, based on your goals';
+                
+                motivationCards[1].querySelector('h3').textContent = '📊 Guaranteed Results';
+                motivationCards[1].querySelector('p').textContent = 'A scientifically proven system with thousands of satisfied clients';
+                
+                motivationCards[2].querySelector('h3').textContent = '💬 Daily Follow-up';
+                motivationCards[2].querySelector('p').textContent = "We're with you 24/7, continuous follow-up and full support";
+                
+                motivationCards[3].querySelector('h3').textContent = '🍎 Nutrition Plan';
+                motivationCards[3].querySelector('p').textContent = 'Delicious and varied meals, not deprivation! Complete system';
+                
+                document.querySelector('.packages h2').textContent = 'Choose Your Perfect Package 🎁';
+                
+                // تحديث الباقات
+                const packages = [
+                    { 
+                        name: 'Basic Package', 
+                        btnText: 'Subscribe Now',
+                        features: ['Personalized training', 'Basic nutrition plan', 'Weekly follow-up', 'WhatsApp support'],
+                        durationLabel: '⏱️ Choose Duration',
+                        durations: ['1 Month - 299 EGP', '2 Months - 549 EGP', '3 Months - 799 EGP', '6 Months - 1499 EGP', 'Full Year - 2699 EGP']
+                    },
+                    { 
+                        name: 'Professional Package',
+                        btnText: 'Subscribe Now',
+                        features: ['Advanced training', 'Detailed nutrition plan', 'Follow-up every 3 days', 'Tutorial videos'],
+                        durationLabel: '⏱️ Choose Duration',
+                        durations: ['1 Month - 349 EGP', '2 Months - 649 EGP', '3 Months - 799 EGP', '6 Months - 1599 EGP', 'Full Year - 2999 EGP']
+                    },
+                    { 
+                        name: 'Gold Package',
+                        btnText: 'Subscribe Now',
+                        features: ['Complete VIP program', 'Complete nutrition + alternatives', 'Daily follow-up', 'Weekly video calls', 'Regular measurements'],
+                        durationLabel: '⏱️ Choose Duration',
+                        durations: ['1 Month - 449 EGP', '2 Months - 799 EGP', '3 Months - 999 EGP', '6 Months - 1299 EGP', 'Full Year - 3499 EGP']
+                    },
+                    { 
+                        name: 'Complete Transformation',
+                        btnText: 'Subscribe Now',
+                        features: ['Yearly renewable program', 'Seasonal nutrition plan', 'Intensive daily follow-up', 'Monthly consultations'],
+                        durationLabel: '⏱️ Choose Duration',
+                        durations: ['1 Month - 549 EGP', '2 Months - 999 EGP', '3 Months - 1299 EGP', '6 Months - 1799 EGP', 'Full Year - 1999 EGP']
+                    },
+                    { 
+                        name: 'Trial Package',
+                        btnText: 'Subscribe Now',
+                        features: ['Trial training program', 'General nutrition tips', 'Initial follow-up', 'Free assessment'],
+                        durationLabel: '⏱️ Choose Duration',
+                        durations: ['1 Month - 99 EGP', '2 Months - 179 EGP', '3 Months - 249 EGP', '6 Months - 449 EGP', 'Full Year - 799 EGP']
+                    }
+                ];
+                
+                const packageCards = document.querySelectorAll('.package-card');
+                packageCards.forEach((card, idx) => {
+                    if (idx < packages.length) {
+                        card.querySelector('h3').textContent = packages[idx].name;
+                        const features = card.querySelectorAll('.features li');
+                        features.forEach((feature, fIdx) => {
+                            if (fIdx < packages[idx].features.length) {
+                                feature.textContent = packages[idx].features[fIdx];
+                            }
+                        });
+                        card.querySelector('.subscribe-btn').textContent = packages[idx].btnText;
+                        
+                        // ترجمة خانة اختيار المدة
+                        const durationLabel = card.querySelector('.duration-selector label');
+                        if (durationLabel) durationLabel.textContent = packages[idx].durationLabel;
+                        
+                        const durationSelect = card.querySelector('.duration-selector select');
+                        if (durationSelect) {
+                            const options = durationSelect.querySelectorAll('option');
+                            options.forEach((opt, oIdx) => {
+                                if (oIdx < packages[idx].durations.length) {
+                                    opt.textContent = packages[idx].durations[oIdx];
+                                }
+                            });
+                        }
+                    }
+                });
+
+                document.getElementById('selectedPackage').textContent = 'Subscription Package';
+                document.querySelector('.modal h2').textContent = 'Complete Subscription';
+                
+                const formLabels = document.querySelectorAll('.form-group label');
+                formLabels[0].textContent = 'Full Name';
+                formLabels[1].textContent = 'Mobile Number';
+                formLabels[2].textContent = 'Email';
+                formLabels[3].textContent = 'Transaction ID';
+                formLabels[4].textContent = '📸 Upload Your Photo (Optional)';
+                
+                document.querySelector('.submit-btn').textContent = 'Confirm Subscription 🚀';
+                document.querySelector('.payment-method h3').textContent = 'Payment Method';
+                document.getElementById('footerReady').textContent = 'Ready to start your journey? 💪';
+                document.getElementById('footerBtn').textContent = 'Contact us on WhatsApp now';
+                
+            } else {
+                html.setAttribute('lang', 'ar');
+                html.setAttribute('dir', 'rtl');
+                document.getElementById('langText').textContent = 'English';
+                
+                // إعادة النصوص للعربية
+                document.querySelector('.hero h1').textContent = 'حول جسمك.. غير حياتك';
+                document.querySelector('.hero p').textContent = 'رحلتك للجسم المثالي تبدأ من هنا 🔥';
+                
+                document.querySelector('.motivation h2').textContent = 'ليه تختارنا؟';
+                document.querySelector('.motivation-content > p').textContent = 'إحنا شريكك في النجاح!';
+                
+                const motivationCards = document.querySelectorAll('.motivation-card');
+                motivationCards[0].querySelector('h3').textContent = '🎯 خطة شخصية';
+                motivationCards[0].querySelector('p').textContent = 'برنامج مخصص ليك بناء على أهدافك';
+                
+                motivationCards[1].querySelector('h3').textContent = '📊 نتائج مضمونة';
+                motivationCards[1].querySelector('p').textContent = 'نظام علمي مع آلاف العملاء الراضين';
+                
+                motivationCards[2].querySelector('h3').textContent = '💬 متابعة يومية';
+                motivationCards[2].querySelector('p').textContent = 'معاك 24/7 حتى تحقق هدفك';
+                
+                motivationCards[3].querySelector('h3').textContent = '🍎 نظام غذائي';
+                motivationCards[3].querySelector('p').textContent = 'أكلات لذيذة مناسبة لحياتك';
+                
+                document.querySelector('.packages h2').textContent = 'اختار الباقة المناسبة 🎁';
+                
+                const packageNames = ['الباقة الأساسية', 'باقة المحترف', 'الباقة الذهبية', 'التحول الكامل', 'باقة التجربة'];
+                const packageFeatures = [
+                    ['برنامج تدريبي مخصص', 'نظام غذائي أساسي', 'متابعة أسبوعية', 'مجموعة واتساب'],
+                    ['برنامج متقدم', 'نظام غذائي تفصيلي', 'متابعة كل 3 أيام', 'فيديوهات توضيحية'],
+                    ['برنامج VIP شامل', 'نظام متكامل + بدائل', 'متابعة يومية', 'مكالمات فيديو أسبوعية', 'قياسات دورية'],
+                    ['برنامج سنوي متجدد', 'نظام فصلي', 'متابعة مكثفة', 'استشارات شهرية'],
+                    ['برنامج تجريبي', 'نصائح غذائية عامة', 'متابعة أولية', 'تقييم مجاني']
+                ];
+
+                const durationLabels = ['⏱️ اختر المدة المناسبة', '⏱️ اختر المدة المناسبة', '⏱️ اختر المدة المناسبة', '⏱️ اختر المدة المناسبة', '⏱️ اختر المدة المناسبة'];
+                
+                const durationOptions = [
+                    ['شهر واحد - 299 جنيه', 'شهرين - 549 جنيه', '3 شهور - 799 جنيه', '6 شهور - 1499 جنيه', 'سنة كاملة - 2699 جنيه'],
+                    ['شهر واحد - 349 جنيه', 'شهرين - 649 جنيه', '3 شهور - 799 جنيه', '6 شهور - 1599 جنيه', 'سنة كاملة - 2999 جنيه'],
+                    ['شهر واحد - 449 جنيه', 'شهرين - 799 جنيه', '3 شهور - 999 جنيه', '6 شهور - 1299 جنيه', 'سنة كاملة - 3499 جنيه'],
+                    ['شهر واحد - 549 جنيه', 'شهرين - 999 جنيه', '3 شهور - 1299 جنيه', '6 شهور - 1799 جنيه', 'سنة كاملة - 1999 جنيه'],
+                    ['شهر واحد - 99 جنيه', 'شهرين - 179 جنيه', '3 شهور - 249 جنيه', '6 شهور - 449 جنيه', 'سنة كاملة - 799 جنيه']
+                ];
+                
+                const packageCards = document.querySelectorAll('.package-card');
+                packageCards.forEach((card, idx) => {
+                    if (idx < packageNames.length) {
+                        card.querySelector('h3').textContent = packageNames[idx];
+                        const features = card.querySelectorAll('.features li');
+                        features.forEach((feature, fIdx) => {
+                            if (fIdx < packageFeatures[idx].length) {
+                                feature.textContent = packageFeatures[idx][fIdx];
+                            }
+                        });
+                        card.querySelector('.subscribe-btn').textContent = 'اشترك الآن';
+                        
+                        // ترجمة خانة اختيار المدة
+                        const durationLabel = card.querySelector('.duration-selector label');
+                        if (durationLabel) durationLabel.textContent = durationLabels[idx];
+                        
+                        const durationSelect = card.querySelector('.duration-selector select');
+                        if (durationSelect) {
+                            const options = durationSelect.querySelectorAll('option');
+                            options.forEach((opt, oIdx) => {
+                                if (oIdx < durationOptions[idx].length) {
+                                    opt.textContent = durationOptions[idx][oIdx];
+                                }
+                            });
+                        }
+                    }
+                });
+
+                document.querySelector('.modal h2').textContent = 'إتمام الاشتراك';
+                
+                const formLabels = document.querySelectorAll('.form-group label');
+                formLabels[0].textContent = 'الاسم الكامل';
+                formLabels[1].textContent = 'رقم الموبايل';
+                formLabels[2].textContent = 'البريد الإلكتروني';
+                formLabels[3].textContent = 'رقم عملية التحويل';
+                formLabels[4].textContent = '📸 رفع صورتك (اختياري)';
+                
+                document.querySelector('.submit-btn').textContent = 'تأكيد الاشتراك 🚀';
+                document.querySelector('.payment-method h3').textContent = 'طريقة الدفع';
+                document.getElementById('footerReady').textContent = 'جاهز تبدأ رحلتك؟ 💪';
+                document.getElementById('footerBtn').textContent = 'تواصل عبر واتساب الآن';
+            }
+        }
+        
+        function closeModal() {
+            document.getElementById('subscriptionModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+            document.getElementById('subscriptionForm').reset();
+            document.getElementById('successMessage').style.display = 'none';
+        }
+
+        function openAuthModal() {
+            document.getElementById('authModal').style.display = 'block';
+            showAuthTab('login');
+        }
+
+        function closeAuthModal() {
+            document.getElementById('authModal').style.display = 'none';
+        }
+
+        // معلومات تسجيل دخول المدير
+        const ADMIN_CREDENTIALS = {
+            name: 'مروان',
+            email: 'aya83493@gmail.com',
+            password: 'panda9994440'
+        };
+
+        // التحقق من تسجيل دخول المدير
+        function checkAdminLogin() {
+            const savedEmail = localStorage.getItem('admin_email');
+            const authBtn = document.getElementById('openAuthBtn');
+            
+            if (savedEmail === ADMIN_CREDENTIALS.email) {
+                if (authBtn) authBtn.style.display = 'none';
+                showAdminPanel();
+            }
+        }
+
+        function showAdminPanel() {
+            const adminBtn = document.createElement('button');
+            adminBtn.id = 'adminPanelBtn';
+            adminBtn.textContent = 'لوحة الإدارة';
+            adminBtn.style.cssText = `
+                background: linear-gradient(90deg, #ff8c00, #ff6b00);
+                border: 0;
+                padding: 6px 12px;
+                border-radius: 18px;
+                color: #fff;
+                font-weight: 800;
+                cursor: pointer;
+                box-shadow: 0 4px 12px rgba(255,107,0,0.2);
+                font-size: 13px;
+                margin-left: 8px;
+            `;
+            adminBtn.onclick = () => {
+                document.getElementById('adminModal').style.display = 'block';
+            };
+            
+            const nav = document.querySelector('nav');
+            if (nav && !document.getElementById('adminPanelBtn')) {
+                nav.appendChild(adminBtn);
+            }
+        }
+
+        function openAdminPanel() {
+            document.getElementById('adminModal').style.display = 'block';
+        }
+
+        function closeAdminPanel() {
+            document.getElementById('adminModal').style.display = 'none';
+        }
+
+        // معالجة تسجيل الدخول
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginForm = document.getElementById('loginForm');
+            if (loginForm) {
+                loginForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const email = document.getElementById('loginEmail').value.trim();
+                    const password = document.getElementById('loginPassword').value;
+                    const name = email.split('@')[0];
+                    const errorEl = document.getElementById('loginError');
+                    
+                    if (errorEl) {
+                        errorEl.style.display = 'none';
+                        errorEl.textContent = '';
+                    }
+                    
+                    // التحقق من بيانات المدير
+                    if (email === ADMIN_CREDENTIALS.email && password === ADMIN_CREDENTIALS.password) {
+                        localStorage.setItem('admin_email', email);
+                        localStorage.setItem('admin_name', ADMIN_CREDENTIALS.name);
+                        localStorage.setItem('user_type', 'admin');
+                        
+                        document.getElementById('openAuthBtn').style.display = 'none';
+                        closeAuthModal();
+                        showAdminPanel();
+                        alert('مرحباً بك يا مدير! 🎉');
+                        location.reload();
+                    } else {
+                        // تسجيل دخول عادي للعملاء
+                        localStorage.setItem('user_email', email);
+                        localStorage.setItem('user_name', name);
+                        localStorage.setItem('user_type', 'customer');
+                        
+                        document.getElementById('openAuthBtn').style.display = 'none';
+                        closeAuthModal();
+                        alert('تم تسجيل الدخول بنجاح! 👋');
+                        location.reload();
+                    }
+                });
+            }
+
+            // التحقق من تسجيل دخول سابق
+            checkAdminLogin();
+        });
+
+        function logoutUser() {
+            localStorage.removeItem('admin_email');
+            localStorage.removeItem('admin_name');
+            localStorage.removeItem('user_email');
+            localStorage.removeItem('user_name');
+            localStorage.removeItem('user_type');
+            document.getElementById('adminPanelBtn')?.remove();
+            document.getElementById('openAuthBtn').style.display = 'inline-block';
+            closeAdminPanel();
+            alert('تم تسجيل الخروج! 👋');
+            location.reload();
+        }
+
+        function showAuthTab(tab) {
+            const login = document.getElementById('authLogin');
+            const reg = document.getElementById('authRegister');
+            const tLogin = document.getElementById('authTabLogin');
+            const tReg = document.getElementById('authTabRegister');
+            if (tab === 'login') {
+                login.style.display = 'block';
+                reg.style.display = 'none';
+                tLogin.style.opacity = '1';
+                tReg.style.opacity = '0.6';
+            } else {
+                login.style.display = 'none';
+                reg.style.display = 'block';
+                tLogin.style.opacity = '0.6';
+                tReg.style.opacity = '1';
+            }
+        }
+        
+        const subscriptionForm = document.getElementById('subscriptionForm');
+        subscriptionForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const fileInput = document.getElementById('userPhoto');
+            const formData = {
+                package: selectedPackageName,
+                duration: selectedDurationText,
+                price: selectedPackagePrice,
+                fullName: document.getElementById('fullName').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                transactionId: document.getElementById('transactionId').value,
+                hasPhoto: fileInput.files.length > 0
+            };
+
+            let photoBase64 = null;
+
+            // قراءة الصورة إذا تم اختيار واحدة
+            if (fileInput.files.length > 0) {
+                const file = fileInput.files[0];
+                
+                // التحقق من حجم الملف
+                if (file.size > 5 * 1024 * 1024) {
+                    alert('حجم الصورة كبير جداً! الحد الأقصى 5MB');
+                    return;
+                }
+
+                // التحقق من نوع الملف
+                if (!['image/jpeg', 'image/png', 'image/gif'].includes(file.type)) {
+                    alert('نوع الملف غير مدعوم! استخدم JPG أو PNG أو GIF');
+                    return;
+                }
+
+                // تحويل الصورة إلى Base64
+                photoBase64 = await new Promise((resolve) => {
+                    const reader = new FileReader();
+                    reader.onload = (e) => resolve(e.target.result);
+                    reader.readAsDataURL(file);
+                });
+            }
+
+            // بناء رسالة واتس مع معلومات الصورة
+            let message = `طلب اشتراك جديد\n━━━━━━━━━━━━━\nالباقة: ${formData.package}\nالمدة: ${formData.duration}\nالسعر: ${formData.price} جنيه\n━━━━━━━━━━━━━\nالاسم: ${formData.fullName}\nرقم الموبايل: ${formData.phone}\nالبريد الإلكتروني: ${formData.email}\nرقم العملية: ${formData.transactionId}`;
+            
+            if (formData.hasPhoto) {
+                message += `\n━━━━━━━━━━━━━\n📸 تم إرسال صورة من العميل`;
+            }
+
+            const waUrl = 'https://wa.me/201270247394?text=' + encodeURIComponent(message);
+            
+            // حفظ البيانات محلياً
+            try {
+                const subscriptionData = {
+                    id: Date.now().toString(36),
+                    ...formData,
+                    photoBase64: photoBase64,
+                    createdAt: new Date().toISOString(),
+                    status: 'pending'
+                };
+
+                const key = 'subscriptions_list_v1';
+                const raw = localStorage.getItem(key);
+                const list = raw ? JSON.parse(raw) : [];
+                list.unshift(subscriptionData);
+                localStorage.setItem(key, JSON.stringify(list));
+            } catch (err) {
+                console.error('Error saving subscription:', err);
+            }
+
+            // فتح واتس وإرسال الرسالة
+            window.open(waUrl, '_blank');
+
+            // إذا كانت هناك صورة، يمكن إضافة رابط تحميل بدلاً من الصورة المباشرة
+            if (photoBase64) {
+                // يمكن إرسال الصورة عبر API أو عرضها للمدير لاحقاً
+                console.log('تم حفظ الصورة بنجاح');
+            }
+
+            document.getElementById('successMessage').style.display = 'block';
+
+            setTimeout(() => {
+                closeModal();
+            }, 3000);
+        });
+        
+        window.onclick = function(event) {
+            const modal = document.getElementById('subscriptionModal');
+            const authModal = document.getElementById('authModal');
+            if (event.target == modal) closeModal();
+            if (event.target == authModal) closeAuthModal();
+        }
+        
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.package-card, .motivation-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+
+        // دالة عرض طلبات الاشتراك في لوحة الإدارة
+        function loadAdminSubscriptions() {
+            const key = 'subscriptions_list_v1';
+            const raw = localStorage.getItem(key);
+            const list = raw ? JSON.parse(raw) : [];
+            
+            const container = document.getElementById('adminList');
+            
+            if (list.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: #ccc; padding: 20px;">لا توجد طلبات اشتراك حتى الآن</p>';
+                return;
+            }
+
+            container.innerHTML = '';
+            
+            list.forEach((item, idx) => {
+                const card = document.createElement('div');
+                card.style.cssText = `
+                    background: linear-gradient(135deg, rgba(45,45,45,0.9), rgba(61,61,61,0.9));
+                    padding: 15px;
+                    margin-bottom: 12px;
+                    border-radius: 10px;
+                    border-left: 4px solid #ff8c00;
+                    transition: all 0.3s ease;
+                `;
+                
+                const photoPreview = item.photoBase64 ? `<img src="${item.photoBase64}" style="width: 80px; height: 80px; border-radius: 8px; margin-top: 10px; object-fit: cover; border: 2px solid #ff8c00;">` : '';
+                
+                card.innerHTML = `
+                    <div style="display: flex; justify-content: space-between; align-items: start; gap: 10px;">
+                        <div style="flex: 1;">
+                            <h4 style="color: #ffa500; margin-bottom: 5px; font-size: 14px;">👤 ${item.fullName}</h4>
+                            <p style="color: #fff; font-size: 13px; margin: 3px 0;"><strong>الباقة:</strong> ${item.package}</p>
+                            <p style="color: #fff; font-size: 13px; margin: 3px 0;"><strong>المدة:</strong> ${item.duration} - ${item.price} جنيه</p>
+                            <p style="color: #aaa; font-size: 12px; margin: 3px 0;">📱 ${item.phone}</p>
+                            <p style="color: #aaa; font-size: 12px; margin: 3px 0;">📧 ${item.email}</p>
+                            <p style="color: #aaa; font-size: 12px; margin: 3px 0;">🔢 العملية: ${item.transactionId}</p>
+                            <p style="color: #777; font-size: 11px; margin-top: 8px;">📅 ${new Date(item.createdAt).toLocaleString('ar-EG')}</p>
+                            ${photoPreview}
+                        </div>
+                        <div style="text-align: center;">
+                            <span style="display: inline-block; padding: 8px 12px; border-radius: 8px; background: #333; color: #ffa500; font-size: 12px; font-weight: bold;">
+                                ${item.status === 'pending' ? '⏳ قيد الانتظار' : item.status === 'approved' ? '✅ موافق عليه' : '❌ مرفوض'}
+                            </span>
+                        </div>
+                    </div>
+                `;
+                
+                container.appendChild(card);
+            });
+        }
+
+        // تحميل طلبات الاشتراك عند فتح لوحة الإدارة
+        const adminBtn = document.getElementById('adminPanelBtn');
+        if (adminBtn) {
+            adminBtn.addEventListener('click', loadAdminSubscriptions);
+        }
+        function animateCard(card) {
+    card.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+        card.style.transform = '';
+    }, 200);
+}
+
+    </script>
+    <div style="text-align: center; padding: 30px 20px; background: linear-gradient(135deg, rgba(30,30,30,0.95), rgba(40,40,40,0.95)); border-top: 2px solid rgba(255,107,0,0.3);">
+    <h2 style="color: #ff6b00; margin-bottom: 15px; font-size: 24px;">هل أنت مستعد لبدء رحلتك؟ 💪</h2>
+    <a href="https://wa.me/201270247394" target="_blank" class="whatsapp-btn" style="display: inline-flex; align-items: center; gap: 10px; padding: 15px 30px; background: linear-gradient(135deg, #ff8c00, #ff6b00); color: #fff; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 18px; box-shadow: 0 5px 20px rgba(255, 140, 0, 0.4); transition: all 0.3s ease;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.149-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.123-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+        تواصل معنا على واتساب
+    </a>
+    <p style="color: #888; margin-top: 25px; font-size: 14px;">© 2025 Coach Online | جميع الحقوق محفوظة</p>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
